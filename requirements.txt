@@ -75,8 +75,5 @@ urllib3==1.26.7
 wcwidth==0.2.5
 wurlitzer==3.0.2
 
-airportsdata
-geopandas
-geopy
-bezier
-powerlaw
+python-louvain
+community

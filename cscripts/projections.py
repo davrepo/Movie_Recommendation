@@ -1,9 +1,6 @@
 # projections.py
 # script holding function to project bipartite network onto one class
 
-# last modified     : 22/11/21
-# author            : jonas-mika senghaas, ludek cizinsky
-
 import os
 import sys
 import time
@@ -18,7 +15,6 @@ local_path = os.path.dirname(os.path.realpath(__file__))
 if local_path not in sys.path:
     sys.path.append(local_path)
 
-
 class Projections:
 
     def __init__(self, G, nodes) -> None:
@@ -30,56 +26,24 @@ class Projections:
         # Utility attributes
         self.info = {
             "simple_weight": {"func": self.simple_weight, "vec": False},
-            "simple_weight_vec": {"func": self.simple_weight_vec, "vec": True},
-            "jaccard": {"func": self.jaccard, "vec": False},
-            "hyperbolic": {"func": self.hyperbolic, "vec": False},
-            "probs": {"func": self.probs, "vec": False},
-            "heats": {"func": self.heats, "vec": False},
-            "hybrid": {"func": self.hybrid, "vec": False},
-            "euclidean": {"func": self.euclidean, "vec": True},
-            "euclidean_norm": {"func": self.euclidean_norm, "vec": True},
+            "cosine": {"func": self.cosine, "vec": True},
             "pearson": {"func": self.pearson, "vec": True},
-            "cosine": {"func": self.cosine, "vec": True}
+            "hyperbolic": {"func": self.hyperbolic, "vec": False},
         }
 
     def simple_weight(self, u, v):
         common = set(self.G[u]) & set(self.G[v])
-        return len(common)
-
-    def simple_weight_vec(self, v_u, v_v):
-        return np.sum((v_u + v_v) == 2)
-
-    def jaccard(self, u, v):
-        n_u, n_v = set(self.G[u]), set(self.G[v])
-        return len(n_u & n_v) / len(n_u | n_v)
-
-    def hyperbolic(self, u, v):
-        common = set(self.G[u]) & set(self.G[v])
-        return sum([1/(len(set(self.G[node])) - 1) for node in common])
-
-    def probs(self, u, v):
-        common = set(self.G[u]) & set(self.G[v])
-        return sum([1/(len(set(self.G[node]))*len(set(self.G[u]))) for node in common])
-
-    def heats(self, u, v):
-        common = set(self.G[u]) & set(self.G[v])
-        return sum([1/(len(set(self.G[node]))*len(set(self.G[v]))) for node in common])
-
-    def hybrid(self, u, v):
-        common = set(self.G[u]) & set(self.G[v])
-        return sum([1/(len(set(self.G[node]))*len(set(self.G[u]))*len(set(self.G[v]))) for node in common])
-
-    def euclidean(self, v_u, v_v):
-        return sp.spatial.distance.euclidean(v_u, v_v)
-
-    def euclidean_norm(self, v_u, v_v):
-        return 1 / (np.sqrt(np.sum(np.power((v_u - v_v), 2))) + 1)
-
+        return sum(self.G[u][w]['weight'] for w in common)
+    
     def pearson(self, v_u, v_v):
         return sp.stats.stats.pearsonr(v_u, v_v)[0] + 1
 
     def cosine(self, v_u, v_v):
         return 1 - sp.spatial.distance.cosine(v_u, v_v)
+
+    def hyperbolic(self, u, v):
+        common = set(self.G[u]) & set(self.G[v])
+        return sum(self.G[u][w]['weight'] / (len(set(self.G[w])) - 1) for w in common)
 
     def node_to_vector(self, onto, adj, u):
         index = onto.index(u)
@@ -196,19 +160,21 @@ if __name__ == '__main__':
 
     # Define G
     G = nx.read_edgelist(f"../data/transformed/data.txt",
-                         delimiter=",", comments='#', create_using=nx.Graph)
+                         delimiter=",", create_using=nx.Graph)
 
-    # Define repos and users nodes
-    repos = [node for node in G.nodes() if node[0] == 'r']
-    users = [node for node in G.nodes() if node[0] == 'u']
+    # Define user and item nodes
+    user = [node for node in G.nodes() if node[0] == 'user']
+    item = [node for node in G.nodes() if node[0] == 'item']
 
     # Initiate projections object
-    proj = Projections(G, nodes={"repos": repos, "users": users})
+    proj = Projections(G, nodes={"user": user, "item": item})
 
     # Define u and v
     u = "r1"
     v = "r2"
 
     # Test
-    proj.project(which_n="repos", which_p="simple_weight",
+    proj.project(which_n="user", which_p="simple_weight",
                  savepath=f"../data/projections/edge_list_format/simple_weight.edges")
+    
+    

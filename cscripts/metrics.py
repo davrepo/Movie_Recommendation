@@ -18,8 +18,6 @@ local_path = os.path.dirname(os.path.realpath(__file__))
 if local_path not in sys.path:
     sys.path.append(local_path)
 
-from handle_timeout import * 
-
 #--- GLOBAL SETUP 
 STOP_EXECUTION = 60 
 np.set_printoptions(suppress=True)
@@ -44,7 +42,6 @@ def five_num_summary(arr):
 
     return np.percentile(arr, [0, 25, 50, 75, 100])
 
-@break_after(STOP_EXECUTION)
 def get_degrees(G):
     """
     Function to extract an (unsorted) iterable of all degrees from a
@@ -61,7 +58,6 @@ def get_degrees(G):
 
     return [degree for _, degree in G.degree()]
 
-@break_after(10)
 def get_lccs(G):
     """
     Function to extract an (unsorted) iterable of all local clustering
@@ -79,7 +75,6 @@ def get_lccs(G):
 
     return list(nx.clustering(G).values())
 
-@break_after(STOP_EXECUTION)
 def get_ccs(G):
     """
     Function to extract an  iterable of all connected components
@@ -97,7 +92,6 @@ def get_ccs(G):
     return [G.subgraph(cc) for cc in nx.connected_components(G)]
 
 
-@break_after(STOP_EXECUTION)
 def get_edge_weights(G):
     """
     Function to extract an iterable of all edge_weights from a 
@@ -120,7 +114,6 @@ def get_edge_weights(G):
 #--- SINGLE NETWORK METRICS
 
 # basic network statistics
-@break_after(STOP_EXECUTION)
 def number_of_nodes(G):
     """
     Returns number of nodes in graph. Uses number_of_nodes() 
@@ -137,7 +130,6 @@ def number_of_nodes(G):
 
     return G.number_of_nodes()
 
-@break_after(STOP_EXECUTION)
 def number_of_edges(G):
     """
     Returns number of edges in graph. Uses number_of_edges() 
@@ -154,7 +146,6 @@ def number_of_edges(G):
 
     return G.number_of_edges()
 
-@break_after(STOP_EXECUTION)
 def global_density(G):
     """
     Returns global density of graph, which is the proportion of
@@ -173,7 +164,6 @@ def global_density(G):
     """
     return nx.density(G)
 
-@break_after(STOP_EXECUTION)
 def global_diameter(G):
     """
     Returns global diameter, which corresponds to the 
@@ -194,24 +184,19 @@ def global_diameter(G):
     else: return 'No Global Diameter (Unconnected Graph)'
 
 # edge weights statistics
-@break_after(STOP_EXECUTION)
 def average_edge_weight(edge_weights):
     return np.mean(edge_weights) if edge_weights else None
 
-@break_after(STOP_EXECUTION)
 def summarise_edge_weights(edge_weights):
     return five_num_summary(edge_weights) if edge_weights else None
 
-@break_after(STOP_EXECUTION)
 def variance_edge_weights(edge_weights):
     return np.var(edge_weights) if edge_weights else None
 
-@break_after(STOP_EXECUTION)
 def most_frequent_edge_weight(edge_weights):
     return Counter(edge_weights).most_common()[0][0] if edge_weights else None
 
 # degree statistics
-@break_after(STOP_EXECUTION)
 def average_degree(degrees):
     """
     Returns average degree from iterable of degrees.
@@ -227,7 +212,6 @@ def average_degree(degrees):
 
     return np.mean(degrees) if degrees else None
 
-@break_after(STOP_EXECUTION)
 def summarise_degrees(degrees):
     """
     Returns Five-Number-Summary of Degrees from iterable
@@ -247,7 +231,6 @@ def summarise_degrees(degrees):
 
 
 # local clustering coefficient
-@break_after(STOP_EXECUTION)
 def average_lcc(lccs):
     """
     Returns average local clustering coefficient from 
@@ -264,7 +247,6 @@ def average_lcc(lccs):
 
     return np.mean(lccs) if lccs else None
 
-@break_after(STOP_EXECUTION)
 def summarise_lcc(lccs):
     """
     Returns Five-Number-Summary of local clustering 
@@ -285,7 +267,6 @@ def summarise_lcc(lccs):
 
 
 # connected components (size)
-@break_after(STOP_EXECUTION)
 def number_of_ccs(ccs):
     """
     Returns number of connected components from iterable
@@ -302,7 +283,6 @@ def number_of_ccs(ccs):
 
     return len(ccs) if ccs else None
 
-@break_after(STOP_EXECUTION)
 def average_cc_size(ccs):
     """
     Returns Average Size of connected components from iterable
@@ -319,7 +299,7 @@ def average_cc_size(ccs):
 
     return np.mean([cc.number_of_nodes() for cc in ccs]) if ccs else None
 
-@break_after(STOP_EXECUTION)
+
 def summarise_cc_size(ccs):
     """
     Returns Five-Number-Summary of sizes of connected components 
@@ -336,7 +316,7 @@ def summarise_cc_size(ccs):
 
     return five_num_summary([cc.number_of_nodes() for cc in ccs]) if ccs else None
 
-@break_after(STOP_EXECUTION)
+
 def average_cc_density(ccs):
     """
     Returns the average density in all connected components.
@@ -352,7 +332,7 @@ def average_cc_density(ccs):
 
     return np.mean([nx.density(cc) for cc in ccs]) if ccs else None
 
-@break_after(STOP_EXECUTION)
+
 def summarise_cc_density(ccs):
     """
     Returns Five-Number-Summary of densities in all connected components.
@@ -367,7 +347,7 @@ def summarise_cc_density(ccs):
     """
     return five_num_summary([nx.density(cc) for cc in ccs]) if ccs else None
 
-@break_after(STOP_EXECUTION)
+
 def average_diameter(ccs):
     """
     Returns average diameter of all connected components.
@@ -383,7 +363,7 @@ def average_diameter(ccs):
 
     return np.mean([nx.diameter(cc) for cc in ccs]) if ccs else None
 
-@break_after(STOP_EXECUTION)
+
 def summarise_diameter(ccs):
     """
     Returns Five-Number-Summary of diameter in all connected components.
@@ -401,7 +381,7 @@ def summarise_diameter(ccs):
 
 
 # centrality measures
-@break_after(STOP_EXECUTION)
+
 def degree_centrality(G, n):
     """
     Returns the n most degree central nodes from a nx.Graph.
@@ -418,7 +398,6 @@ def degree_centrality(G, n):
     return [x[0] for x in sorted([item for item in nx.algorithms.centrality.degree_centrality(G).items()], 
                 key=lambda item: item[1], reverse=True)[:n]]
 
-@break_after(10)
 def betweenness_centrality(G, n):
     """
     Returns the n nodes with highest betweenness centrality 
