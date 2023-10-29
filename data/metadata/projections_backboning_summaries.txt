@@ -1,0 +1,39 @@
+=== METADATA: Projections Backboning Summaries ===
+
+
+Method: Jaccard Noise Corrected
+-----------------------
+Date: 29/10/23
+Time: 18:38:31
+Backboning Time: 0.51
+Load Time: 0.06
+Execution Time: 25.52
+Success: True
+
+Method: Jaccard Disparity Filter
+------------------------
+Date: 29/10/23
+Time: 18:38:57
+Backboning Time: 0.54
+Load Time: 0.11
+Execution Time: 49.29
+Success: True
+
+Method: Hyperbolic Noise Corrected
+--------------------------
+Date: 29/10/23
+Time: 18:39:47
+Backboning Time: 0.51
+Load Time: 0.04
+Execution Time: 17.18
+Success: True
+
+Method: Hyperbolic Disparity Filter
+---------------------------
+Date: 29/10/23
+Time: 18:40:04
+Backboning Time: 0.51
+Load Time: 0.26
+Execution Time: 78.45
+Success: True
+
