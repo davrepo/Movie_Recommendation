@@ -10,9 +10,9 @@ import backboning
 
 def naive_recommend(G, n=5, sort_by='weight'):
     """
-    The NaiveRecommend algorithm makes recommendation sorely on the neighboring repositories
+    The NaiveRecommend algorithm makes recommendation sorely on the neighboring movies
     in the final recommendation graph. For each node, we consider the n neighboring
-    repositories with highest edge weight, as we assume those to be the most similar, and thus
+    movies with highest edge weight, as we assume those to be the most similar, and thus
     the best recommendation. 
 
     Runtime: |V|*avg(k)
@@ -31,9 +31,9 @@ def naive_recommend(G, n=5, sort_by='weight'):
 def search_depth_recommend(G, n=5, sort_by='weight', search_depth='max'):
     """
     The SearchDepthRecommend improves the NaiveRecommend by also considering non-neighboring 
-    repositories. It is based on the idea, that a low-weight neighboring repository is not 
+    movies. It is based on the idea, that a low-weight neighboring repository is not 
     as good of a recommendation as a highly connected second level neighbor (ie. it follows
-    communities of repositories).
+    communities of movies).
     The algorithm is based on n calls to dijkstras on the graph subsetted to a certain search depth,
     at each node dijkstras chooses the maximum edge weight to construct the max weight path of 
     length search_depth. We then consider all possible length paths and compute a disproportional
