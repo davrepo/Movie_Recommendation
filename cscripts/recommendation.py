@@ -31,7 +31,7 @@ def naive_recommend(G, n=5, sort_by='weight'):
 def search_depth_recommend(G, n=5, sort_by='weight', search_depth='max'):
     """
     The SearchDepthRecommend improves the NaiveRecommend by also considering non-neighboring 
-    movies. It is based on the idea, that a low-weight neighboring repository is not 
+    movies. It is based on the idea, that a low-weight neighboring movie is not 
     as good of a recommendation as a highly connected second level neighbor (ie. it follows
     communities of movies).
     The algorithm is based on n calls to dijkstras on the graph subsetted to a certain search depth,
