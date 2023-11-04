@@ -1,9 +1,6 @@
 # plotting.py
 # script holding function to analyse unipartite and bipartite networkx
 
-# last modified     : 16/11/21
-# author            : jonas-mika senghaas
-
 import metrics
 import powerlaw as pl
 from tqdm import tqdm

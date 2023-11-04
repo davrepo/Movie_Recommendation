@@ -1,7 +1,7 @@
 # Generic Summary of Unipartite Graph **Simple_Weight**
 ---
 Created: 04/11/23
-Computation Time: 850.67sec
+Computation Time: 887.76sec
 
 ## Basic Statistics
 ---
@@ -54,7 +54,7 @@ Computation Time: 850.67sec
 ---
 <table>
 <tr><th align="center"><img width="441" height="1"><p><small>Network Statistic</small></p></th><th align="center"><img width="441" height="1"><p><small>Result</small></p></th></tr>
-<tr><td>Degree Centrality</td><td>['i288', 'i50', 'i181', 'i302', 'i127', 'i174', 'i313', 'i56', 'i204', 'i258']</td></tr>
+<tr><td>Degree Centrality</td><td>['i288', 'i50', 'i181', 'i302', 'i127', 'i174', 'i313', 'i56', 'i258', 'i204']</td></tr>
 <tr><td>Betweenness Centrality</td><td>['i288', 'i286', 'i258', 'i302', 'i313', 'i294', 'i269', 'i50', 'i300', 'i268']</td></tr>
 </table>
 

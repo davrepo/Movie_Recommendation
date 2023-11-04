@@ -1,12 +1,12 @@
 === METADATA: Projections Backboning Summaries ===
 
 
-Method: Hyperbolic Disparity Filter
----------------------------
+Method: Hyperbolic Thresholding
+-----------------------
 Date: 04/11/23
-Time: 14:40:15
-Backboning Time: 0.58
-Load Time: 0.23
-Execution Time: 83.82
+Time: 20:23:18
+Backboning Time: 0.51
+Load Time: 0.33
+Execution Time: 130.12
 Success: True
 

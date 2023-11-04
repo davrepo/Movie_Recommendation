@@ -1,7 +1,7 @@
 # Generic Summary of Unipartite Graph **Hyperbolic**
 ---
 Created: 04/11/23
-Computation Time: 864.9sec
+Computation Time: 900.05sec
 
 ## Basic Statistics
 ---
@@ -25,9 +25,9 @@ Computation Time: 864.9sec
 ---
 <table>
 <tr><th align="center"><img width="441" height="1"><p><small>Network Statistic</small></p></th><th align="center"><img width="441" height="1"><p><small>Result</small></p></th></tr>
-<tr><td>Average Edge Weight</td><td>0.19862495182296608</td></tr>
+<tr><td>Average Edge Weight</td><td>0.19862495182296616</td></tr>
 <tr><td>Five-Number-Summary Edge Weights</td><td>[ 0.0013587   0.01244813  0.04376168  0.16305158 26.75677234]</td></tr>
-<tr><td>Variance of Edge Weights</td><td>0.26332257413391336</td></tr>
+<tr><td>Variance of Edge Weights</td><td>0.26332257413391347</td></tr>
 <tr><td>Most Frequent Edge Weight</td><td>0.0067934782608695</td></tr>
 </table>
 
@@ -54,7 +54,7 @@ Computation Time: 864.9sec
 ---
 <table>
 <tr><th align="center"><img width="441" height="1"><p><small>Network Statistic</small></p></th><th align="center"><img width="441" height="1"><p><small>Result</small></p></th></tr>
-<tr><td>Degree Centrality</td><td>['i288', 'i50', 'i181', 'i302', 'i127', 'i174', 'i313', 'i56', 'i204', 'i258']</td></tr>
+<tr><td>Degree Centrality</td><td>['i288', 'i50', 'i181', 'i302', 'i127', 'i174', 'i313', 'i56', 'i258', 'i204']</td></tr>
 <tr><td>Betweenness Centrality</td><td>['i288', 'i286', 'i258', 'i302', 'i313', 'i294', 'i269', 'i50', 'i300', 'i268']</td></tr>
 </table>
 
