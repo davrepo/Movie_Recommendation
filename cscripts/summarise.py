@@ -2,10 +2,7 @@
 # file that contains code to generate complex summaries including all relevant network
 # statistics and visualisation for a generic graph.
 
-# last modified: 15.11.21
-# author: jonas-mika senghaas
-
-from plotting import generate_plots
+# from plotting import generate_plots
 from metrics import export_metrics
 import os
 import sys
@@ -28,13 +25,12 @@ def generate_markdown(G, filepath='.', name='unnamed', save_name=None, plain=Tru
     os.makedirs(savepath) if not os.path.exists(savepath) else None
 
     s = f"# Generic Summary of Unipartite Graph **{name.title()}**\n---\n"
-    s += f"Created: {date.today().strftime('%d/%m/%y')}\n"
-
-    start = time()
+    
+    # start = time()
     stats = export_metrics(G)
-    generate_plots(G, name=name, filepath=f'{savepath}/assets')
-    end = time()
-    s += f"Computation Time: {round(end - start, 2)}sec\n\n"
+    # generate_plots(G, name=name, filepath=f'{savepath}/assets')
+    # end = time()
+    # s += f"Computation Time: {round(end - start, 2)}sec\n\n"
 
     # metrics
     for section in stats:
@@ -53,11 +49,11 @@ def generate_markdown(G, filepath='.', name='unnamed', save_name=None, plain=Tru
         if not plain:
             s += '</table>\n\n'
 
-    # plots
-    for file in os.listdir(f'{savepath}/assets'):
-        title = file[:-4].replace('_', ' ').title()
-        s += f'## {title} Plot\n---\n'
-        s += f'![image]({savepath}/assets/{file})\n\n'
+    # # plots
+    # for file in os.listdir(f'{savepath}/assets'):
+    #     title = file[:-4].replace('_', ' ').title()
+    #     s += f'## {title} Plot\n---\n'
+    #     s += f'![image]({savepath}/assets/{file})\n\n'
 
     # write all string to markdown file
     with open(f'{savepath}/{save_name}.md', 'w') as outfile:

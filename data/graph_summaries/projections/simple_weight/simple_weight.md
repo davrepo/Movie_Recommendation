@@ -1,7 +1,7 @@
 # Generic Summary of Unipartite Graph **Simple_Weight**
 ---
-Created: 29/10/23
-Computation Time: 958.92sec
+Created: 04/11/23
+Computation Time: 887.76sec
 
 ## Basic Statistics
 ---
@@ -25,10 +25,10 @@ Computation Time: 958.92sec
 ---
 <table>
 <tr><th align="center"><img width="441" height="1"><p><small>Network Statistic</small></p></th><th align="center"><img width="441" height="1"><p><small>Result</small></p></th></tr>
-<tr><td>Average Edge Weight</td><td>10.222075536561006</td></tr>
-<tr><td>Five-Number-Summary Edge Weights</td><td>[  1.   1.   3.  10. 480.]</td></tr>
-<tr><td>Variance of Edge Weights</td><td>354.36160142929765</td></tr>
-<tr><td>Most Frequent Edge Weight</td><td>1</td></tr>
+<tr><td>Average Edge Weight</td><td>39.88207252600167</td></tr>
+<tr><td>Five-Number-Summary Edge Weights</td><td>[   1.    5.   13.   39. 2155.]</td></tr>
+<tr><td>Variance of Edge Weights</td><td>5670.097149186614</td></tr>
+<tr><td>Most Frequent Edge Weight</td><td>5</td></tr>
 </table>
 
 ## Clustering Statistics

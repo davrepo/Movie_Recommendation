@@ -1,7 +1,7 @@
 # Generic Summary of Unipartite Graph **Hyperbolic**
 ---
-Created: 29/10/23
-Computation Time: 1102.85sec
+Created: 04/11/23
+Computation Time: 900.05sec
 
 ## Basic Statistics
 ---
@@ -25,10 +25,10 @@ Computation Time: 1102.85sec
 ---
 <table>
 <tr><th align="center"><img width="441" height="1"><p><small>Network Statistic</small></p></th><th align="center"><img width="441" height="1"><p><small>Result</small></p></th></tr>
-<tr><td>Average Edge Weight</td><td>0.050854042794694056</td></tr>
-<tr><td>Five-Number-Summary Edge Weights</td><td>[0.0013587  0.00340369 0.01165884 0.04288589 5.93475731]</td></tr>
-<tr><td>Variance of Edge Weights</td><td>0.0165767487253894</td></tr>
-<tr><td>Most Frequent Edge Weight</td><td>0.0013586956521739</td></tr>
+<tr><td>Average Edge Weight</td><td>0.19862495182296616</td></tr>
+<tr><td>Five-Number-Summary Edge Weights</td><td>[ 0.0013587   0.01244813  0.04376168  0.16305158 26.75677234]</td></tr>
+<tr><td>Variance of Edge Weights</td><td>0.26332257413391347</td></tr>
+<tr><td>Most Frequent Edge Weight</td><td>0.0067934782608695</td></tr>
 </table>
 
 ## Clustering Statistics

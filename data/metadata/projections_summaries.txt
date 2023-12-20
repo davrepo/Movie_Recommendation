@@ -1,0 +1,19 @@
+=== METADATA: Projections Summaries ===
+
+
+Method: Simple Weight
+-------------
+Date: 04/11/23
+Time: 19:29:51
+Load Time: 5.84
+Execution Time: 887.77
+Success: True
+
+Method: Hyperbolic
+----------
+Date: 04/11/23
+Time: 19:44:44
+Load Time: 6.87
+Execution Time: 900.05
+Success: True
+
