@@ -1,9 +1,6 @@
 # metrics.py 
 # script holding function to analyse unipartite and bipartite networkx
 
-# last modified     : 16/11/21
-# author            : jonas-mika senghaas
-
 import os
 import sys
 import time

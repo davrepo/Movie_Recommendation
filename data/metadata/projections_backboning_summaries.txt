@@ -1,39 +1,12 @@
 === METADATA: Projections Backboning Summaries ===
 
 
-Method: Jaccard Noise Corrected
+Method: Hyperbolic Thresholding
 -----------------------
-Date: 30/10/23
-Time: 18:41:14
-Backboning Time: 0.64
-Load Time: 0.08
-Execution Time: 29.55
-Success: True
-
-Method: Jaccard Disparity Filter
-------------------------
-Date: 30/10/23
-Time: 18:41:44
-Backboning Time: 0.61
-Load Time: 0.14
-Execution Time: 50.7
-Success: True
-
-Method: Hyperbolic Noise Corrected
---------------------------
-Date: 30/10/23
-Time: 18:42:35
-Backboning Time: 0.57
-Load Time: 0.05
-Execution Time: 19.45
-Success: True
-
-Method: Hyperbolic Disparity Filter
----------------------------
-Date: 30/10/23
-Time: 18:42:55
-Backboning Time: 0.58
-Load Time: 0.3
-Execution Time: 91.59
+Date: 04/11/23
+Time: 20:23:18
+Backboning Time: 0.51
+Load Time: 0.33
+Execution Time: 130.12
 Success: True
 

@@ -1,9 +1,6 @@
 # evaluation.py 
 # script holding function to evaluate the quality of recommendation based on queried metadata
 
-# last modified     : 29/11/21
-# author            : jonas-mika senghaas
-
 import json
 import os
 import numpy as np
